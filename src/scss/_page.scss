@@ -1,0 +1,145 @@
+/* breadcrumbs */
+.breadcrumbs {
+    font-size: 16px;
+
+    ul {
+        @include ul-default;
+
+        li {
+            padding: 5px 0px;
+            color: #3361eb;
+            @include inline-block;
+
+            a {
+                text-decoration: none;
+                color: #ffc107;
+            }
+
+            &:after {
+                content: '\f054';
+                font-family: 'fontAwesome';
+                margin: 0px 2px 0px 7px;
+                color: #282727;
+                @include inline-block;
+            }
+
+            &:last-of-type:after {
+                display: none;
+            }
+        }
+    }
+}
+
+/* breadcrumbs */
+
+.call--btn {
+    outline: 0;
+    border: 0;
+    position: fixed;
+    bottom: 100px;
+    right: 90px;
+    display: grid;
+    place-items: center;
+    background: $grad;
+    font-family: 'FontAwesome';
+    border-radius: 100%;
+    text-decoration: none !important;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(30, 30, 30, 0.1);
+    box-sizing: border-box;
+    outline: none !important;
+    z-index: 99;
+    cursor: pointer;
+
+    &:hover {
+        i {
+            animation-name: phone;
+            animation-iteration-count: 1;
+            animation-duration: 0.7s;
+        }
+    }
+
+    i {
+        display: block;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    &:after,
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: 1px solid #79B653;
+        position: absolute;
+        top: -2%;
+        left: -2%;
+        border-radius: 100%;
+        animation-iteration-count: infinite;
+        animation-duration: 1.2s;
+        animation-name: ring;
+        outline: none;
+    }
+
+    &:after {
+        animation-delay: 0.6s;
+    }
+
+    &:before {
+        animation-delay: 0.8s;
+        border: 1px solid #79B653;
+    }
+
+    @media screen and (max-width: 1440px) {
+        margin-right: 0;
+        right: 35px;
+        bottom: 75px;
+    }
+
+    @media screen and (max-width: 991px) {
+        width: 45px;
+        height: 45px;
+        right: 25px;
+        bottom: 70px;
+
+        i {
+            font-size: 20px;
+            padding-left: 2px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        bottom: 50px;
+    }
+}
+@keyframes ring {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.1;
+        transform: scale(1.7);
+    }
+}
+
+@keyframes phone {
+    20% {
+        transform: rotate(-30deg);
+    }
+
+    80% {
+        transform: rotate(390deg)
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* modal */
+
+/* page content */
